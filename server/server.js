@@ -4,6 +4,10 @@ const path = require('path');
 
 const app = express();
 
+//TODO We need middleware to convert request and response payloads to an from JSON
+
+//TODO We need to setup a route/collection of routes
+
 const port = process.env.PORT || 4001;
 
 app.listen(port, () => {
