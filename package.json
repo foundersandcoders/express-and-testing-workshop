@@ -1,0 +1,31 @@
+{
+  "name": "express-and-testing-workshop",
+  "version": "1.0.0",
+  "description": "A testing workshop with express js",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js",
+    "test": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akin909/express-and-testing-workshop.git"
+  },
+  "keywords": [
+    "testing",
+    "express",
+    "foundersandcoders"
+  ],
+  "author": "Akin Sowemimo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Akin909/express-and-testing-workshop/issues"
+  },
+  "homepage": "https://github.com/Akin909/express-and-testing-workshop#readme",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "express": "^4.15.3",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0"
+  }
+}
