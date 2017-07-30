@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./server/server.js",
     "test": "tape -w",
-    "build:db":"node ./database/dbBuild.js"
+    "build:db": "node ./database/dbBuild.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "express": "^4.15.3",
     "nodemon": "^1.11.0",
     "pg-promise": "^6.3.6",
+    "supertest": "^3.0.0",
     "tape": "^4.7.0"
   }
 }
