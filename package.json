@@ -25,6 +25,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "nodemon": "^1.11.0",
+    "pg-promise": "^6.3.6",
     "tape": "^4.7.0"
   }
 }
