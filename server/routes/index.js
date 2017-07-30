@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const queries = require('./../queries');
 
 router.get('/facsters', (req, res, next) =>
   queries
@@ -8,17 +9,17 @@ router.get('/facsters', (req, res, next) =>
     .catch(err => next(err))
 );
 
-router.get('/facsters/:id', ({ params: { id } }, res, next) => {
+router.get('/facsters/:name', ({ params: { name } }, res, next) => {
   queries
-    .getSingleUser(id)
-    .then(user => res.status(200).json(user))
+    .getSingleFacster(name)
+    .then(person => res.status(200).json(person))
     .catch(err => next(err));
 });
 
 router.post('/facster/new', ({ body }, res, next) => {
   queries
-    .addUser(body)
-    .then(userID => queries.getSingleUser(userID))
+    .addFacster(body)
+    .then(userID => queries.getFacsterById(userID))
     .then(user => res.status(200).json(user))
     .catch(err => next(err));
 });
