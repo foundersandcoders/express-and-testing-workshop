@@ -31,22 +31,24 @@ router.get('/facsters/:name/hobby', ({ params: { name }, body }, res, next) => {
     .catch(err => next(err));
 });
 
-router.put('/facster/:id/superpower', ({ params: { id }, body }, res, next) => {
-  queries
-    .updateMedication(id, body)
-    .then(() => queries.getSingleMed(id))
-    .then(user => res.status(200).json(user))
-    .catch(err => next(err));
-});
-
 router.get(
-  '/facster/:id/superpower&hobby',
-  ({ params: { id, date } }, res, next) => {
+  '/facsters/:name/superpower',
+  ({ params: { name }, body }, res, next) => {
     queries
-      .getEveningCheck(id, date)
-      .then(check => res.status(200).json(check))
+      .getFacsterSuperpower(name)
+      .then(facsterAndPower => res.status(200).json(facsterAndPower))
       .catch(err => next(err));
   }
 );
+
+//router.put(
+//'/facsters/:id/superpower&hobby',
+//({ params: { id, date } }, res, next) => {
+//queries
+//.getEveningCheck(id, date)
+//.then(check => res.status(200).json(check))
+//.catch(err => next(err));
+//}
+//);
 
 module.exports = router;
