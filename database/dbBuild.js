@@ -4,7 +4,7 @@ const db = require('./dbConnection');
 
 const sql = file => QueryFile(path.join(__dirname, file), { minify: true });
 
-const build = sql('./dbBuild.sql');
+const build = sql('./build.sql');
 
 db
   .query(build)

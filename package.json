@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./server/server.js",
-    "test": "mocha -w"
+    "test": "tape -w",
+    "build:db":"node ./database/dbBuild.js"
   },
   "repository": {
     "type": "git",
