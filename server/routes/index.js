@@ -24,10 +24,10 @@ router.post('/facster/new', ({ body }, res, next) => {
     .catch(err => next(err));
 });
 
-router.get('/facsters/:id/hobby', ({ params: { id }, body }, res, next) => {
+router.get('/facsters/:name/hobby', ({ params: { name }, body }, res, next) => {
   queries
-    .getSingleMed(id)
-    .then(medication => res.status(200).json(medication))
+    .getFacsterHobby(name)
+    .then(facsterAndHobby => res.status(200).json(facsterAndHobby))
     .catch(err => next(err));
 });
 

@@ -15,8 +15,10 @@ const getSingleFacster = name =>
     capitaliseName(name)
   );
 
-const getFacsterById = id =>
-  db.query(`SELECT * FROM facsters WHERE facsters.id = $1`, id);
+const getFacsterById = id => {
+  const { id: facsterId } = id; //Id is returned as an object
+  db.query(`SELECT * FROM facsters WHERE facsters.id = $1`, facsterId);
+};
 
 const addFacster = facster => {
   const { firstname, cohort, surname } = facster;
@@ -26,9 +28,21 @@ const addFacster = facster => {
   );
 };
 
+const getFacsterHobby = name => {
+  return getSingleFacster(name).then(person => {
+    const [{ id }] = person; //This destructuring assignment takes the first variable out of the array then the value of the id key is assigned to the variable id
+    console.log('facster', id);
+    return db.query(
+      `SELECT * FROM facsters f,hobbies h WHERE f.id = $1 AND h.facster_id = $1`,
+      id
+    );
+  });
+};
+
 module.exports = {
   getAll,
   getSingleFacster,
   getFacsterById,
   addFacster,
+  getFacsterHobby,
 };
