@@ -54,5 +54,5 @@ module.exports = {
   getFacsterById,
   addFacster,
   getFacsterHobby,
-  getFacsterSuperpower
+  getFacsterSuperpower,
 };
