@@ -13,10 +13,4 @@ app.use('/v1/api/', routes);
 
 //TODO We need to setup a route/collection of routes
 
-const port = process.env.PORT || 4001;
-
-app.listen(port, () => {
-  console.log(`The things, the things are happening on ${port}!!`);
-});
-
 module.exports = app;

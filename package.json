@@ -4,7 +4,7 @@
   "description": "A testing workshop with express js",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server/server.js",
+    "start": "nodemon ./server/",
     "test": "tape -w",
     "build:db": "node ./database/dbBuild.js"
   },
