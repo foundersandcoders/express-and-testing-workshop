@@ -20,7 +20,7 @@ router.post('/facster/new', ({ body }, res, next) => {
   queries
     .addFacster(body)
     .then(userID => queries.getFacsterById(userID))
-    .then(user => res.status(200).json(user))
+    .then(user => res.status(201).json(user))
     .catch(err => next(err));
 });
 

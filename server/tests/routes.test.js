@@ -36,9 +36,22 @@ test('Should be able to get a facster by their name', t => {
         t.same(res.statusCode, 200, 'Status code is 200');
         t.error(err, 'No error');
         t.same(res.body[0].firstname, name, `Name is ${name} as expected`);
-        if (name.length - 1 === index) {
+        if (names.length - 1 === index) {
           t.end();
         }
       });
   });
+});
+test('Should add a new facster', t => {
+  const facTwelver = { firstname: 'jason', surname: 'bourne', cohort: 12 };
+  request(app)
+    .post(`/v1/api/facster/new`)
+    .send(facTwelver)
+    .expect(201)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.same(res.statusCode, 201, 'Status code is 201');
+      t.error(err, 'No error');
+      t.same(res.body.firstname, 'jason', 'Should add JSON bourne to FAC');
+    });
 });
