@@ -52,6 +52,6 @@ test('Should add a new facster', t => {
     .end((err, res) => {
       t.same(res.statusCode, 201, 'Status code is 201');
       t.error(err, 'No error');
-      t.same(res.body.firstname, 'jason', 'Should add JSON bourne to FAC');
+      t.same(res.body[0].firstname, 'jason', 'Should add JSON bourne to FAC');
     });
 });

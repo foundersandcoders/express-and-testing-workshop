@@ -15,9 +15,9 @@ const getSingleFacster = name =>
     capitaliseName(name)
   );
 
-const getFacsterById = id => {
-  const { id: facsterId } = id; //Id is returned as an object
-  db.query(`SELECT * FROM facsters WHERE facsters.id = $1`, facsterId);
+const getFacsterById = idObj => {
+  const [{ id }] = idObj; //Id is returned as an object
+  return db.query(`SELECT * FROM facsters WHERE facsters.id = $1`, id);
 };
 
 const addFacster = facster => {
