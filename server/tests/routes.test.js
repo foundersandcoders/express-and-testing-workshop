@@ -1,4 +1,5 @@
 const test = require('tape');
+
 const request = require('supertest');
 const app = require('./../server');
 
@@ -53,5 +54,38 @@ test('Should add a new facster', t => {
       t.same(res.statusCode, 201, 'Status code is 201');
       t.error(err, 'No error');
       t.same(res.body[0].firstname, 'jason', 'Should add JSON bourne to FAC');
+      t.end();
+    });
+});
+test('Should find a facsters\' hobbies', t => {
+  request(app)
+    .get(`/v1/api/facsters/bart/hobby`)
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.same(res.statusCode, 200, 'Status code is 200');
+      t.error(err, 'No error');
+      t.same(
+        res.body[0].hobby,
+        'Ninja training',
+        'Should return the hobby of a given facster'
+      );
+      t.end();
+    });
+});
+test('That it returns a given facsters\' superpowers', t => {
+  request(app)
+    .get(`/v1/api/facsters/abdullah/superpower`)
+    .expect(200)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.same(res.statusCode, 200, 'Status code is 200');
+      t.error(err, 'No error');
+      t.same(
+        res.body[0].superpower,
+        'linting wizard',
+        'Should return the superpower of a given facster'
+      );
+      t.end();
     });
 });
