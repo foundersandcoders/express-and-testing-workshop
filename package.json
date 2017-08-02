@@ -4,8 +4,10 @@
   "description": "A testing workshop with express js",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server/server.js",
-    "test": "mocha -w"
+    "start": "nodemon ./server/",
+    "test": "node ./server/tests/routes.test.js | tap-spec",
+    "test:watch": "tape -w",
+    "build:db": "node ./database/dbBuild.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,9 @@
   "dependencies": {
     "express": "^4.15.3",
     "nodemon": "^1.11.0",
+    "pg-promise": "^6.3.6",
+    "supertest": "^3.0.0",
+    "tap-spec": "^4.1.1",
     "tape": "^4.7.0"
   }
 }

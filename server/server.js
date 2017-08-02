@@ -1,6 +1,7 @@
 //This is all hopefully familiar by now
 const express = require('express');
 const path = require('path');
+const routes = require('./routes');
 
 const app = express();
 
@@ -8,8 +9,4 @@ const app = express();
 
 //TODO We need to setup a route/collection of routes
 
-const port = process.env.PORT || 4001;
-
-app.listen(port, () => {
-  console.log(`The things, the things are happening on ${port}!!`);
-});
+module.exports = app;
