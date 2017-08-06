@@ -48,3 +48,7 @@ app.use('/api/v1/', routes)
 * Although `supertest` is new to you there is a whole wide world of
   frameworks and libraries in javascript (#JSFatigue) and Learning the docs
   is probably half of what it means to be a good js developer.
+
+* You will note that I have snuck promises into this workshop as they are an
+  extremely common and important tool for handling asynchronicity and are
+  well on their way to replacing callbacks
