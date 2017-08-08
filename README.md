@@ -33,6 +33,8 @@ app.use('/api/v1/', routes)
 
 ## Tasks
 * `git clone` this repository, run `npm install`.
+*  Run `createdb fac-express` - **IMPORTANT**
+*  Setup the database by running `npm run build:db` - **IMPORTANT**
 * `npm start` to begin the project.
 * In **another** terminal pane run npm test.
 * This repository provides you with a skeleton express server your task is to
@@ -46,9 +48,11 @@ app.use('/api/v1/', routes)
   etc. `supertest` will allow you to make requests to your server and expect
   certain results.
 * Although `supertest` is new to you there is a whole wide world of
-  frameworks and libraries in javascript (#JSFatigue) and Learning the docs
+  frameworks and libraries in javascript (#JSFatigue) and learning to use the docs
   is probably half of what it means to be a good js developer.
 
 * You will note that I have snuck promises into this workshop as they are an
   extremely common and important tool for handling asynchronicity and are
-  well on their way to replacing callbacks
+  well on their way to replacing callbacks.
+* you won't be expected to use
+  these but I have used then to make the queries so take a look, please ask if any of it is unclear.
