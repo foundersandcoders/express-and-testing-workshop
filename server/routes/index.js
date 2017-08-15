@@ -19,10 +19,6 @@ router.get('/facsters', (req, res, next) =>
  */
 
 /*
- * '/facsters/:name'
- */
-
-/*
  * '/facster/new'
  */
 
