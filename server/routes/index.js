@@ -41,14 +41,4 @@ router.get(
   }
 );
 
-//router.put(
-//'/facsters/:id/superpower&hobby',
-//({ params: { id, date } }, res, next) => {
-//queries
-//.getEveningCheck(id, date)
-//.then(check => res.status(200).json(check))
-//.catch(err => next(err));
-//}
-//);
-
 module.exports = router;
