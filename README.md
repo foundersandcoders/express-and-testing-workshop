@@ -17,7 +17,7 @@ Learning Outcomes
 
 ```js
 // In Routes.js
-app.get('/', (res, req) => {
+router.get('/', (res, req) => {
   //Do Stuff
 })
 // In Server.js
