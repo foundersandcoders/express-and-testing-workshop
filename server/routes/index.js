@@ -1,8 +1,11 @@
-'use strict';
 const express = require('express');
 const { Router } = express; //Here we destructure (ES6) the Router value off of express
 const router = Router();
 const queries = require('./queries');
+
+//These routes are all promise based - promises are native feature of javascript that provide an alternative way of handling
+//asynchronous actions. You make a request and use the '.then()' syntax to handle the response.
+
 
 // =========================================================
 // Routes
