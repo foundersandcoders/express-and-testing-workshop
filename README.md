@@ -71,12 +71,11 @@ app.use('/api/v1/', routes)
 * `git clone` this repository, run `npm install`.
 *  Run `createdb fac-express` - **IMPORTANT**
 *  Setup the database by running `npm run build:db` - **IMPORTANT**
-* `npm start` to begin the project.
-* In **another** terminal pane run npm test.
 * This repository provides you with a skeleton express server your task is to
-  create tests for your express routes using TDD.
-
-* inside `server.js` require in any necessary middleware.
+  create tests for your express routes.
+* Your first task should be filling in the missing middleware that your server needs. See the comments in `server.js` for hints.
+* Once this is complete run `npm start` to begin the project.
+* In **another** terminal pane run npm test.
 * Then go to you test folder, and open `routes.test.js`
 * Inside this file you will be using `tape` and `supertest`(a testing
   framework - [link to the docs!!](https://github.com/visionmedia/supertest))
