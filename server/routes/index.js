@@ -6,7 +6,6 @@ const queries = require('./queries');
 //These routes are all promise based - promises are native feature of javascript that provide an alternative way of handling
 //asynchronous actions. You make a request and use the '.then()' syntax to handle the response.
 
-
 // =========================================================
 // Routes
 // =========================================================
@@ -65,8 +64,5 @@ router.get(
       .catch(err => next(err));
   }
 );
-
-
-
 
 module.exports = router;
