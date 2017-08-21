@@ -73,7 +73,7 @@ test('Should find a facsters\' hobbies', t => {
       t.end();
     });
 });
-test('That it returns a given facsters\' superpowers', t => {
+test('That it returns a given facster\'s superpower', t => {
   request(app)
     .get(`/v1/api/facsters/abdullah/superpower`)
     .expect(200)
@@ -89,3 +89,4 @@ test('That it returns a given facsters\' superpowers', t => {
       t.end();
     });
 });
+test.onFinish(() => process.exit(0));
