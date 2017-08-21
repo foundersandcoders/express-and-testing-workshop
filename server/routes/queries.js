@@ -15,7 +15,7 @@ const getSingleFacster = name =>
   );
 
 const getFacsterById = id => {
-  const { id: facsterId } = id; //id is returned as an objects from addFacster
+  const { id: facsterId } = id; //id is returned as an object from addFacster
   return db.query(`SELECT * FROM facsters WHERE facsters.id = $1`, facsterId);
 };
 
