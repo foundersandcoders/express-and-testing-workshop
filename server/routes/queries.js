@@ -15,16 +15,17 @@ const getSingleFacster = name =>
   );
 
 const getFacsterById = id => {
-  const { id: facsterId } = id[0]; //Id is returned as an array of objects from addFacster, look up object deconstruction
+  const { id: facsterId } = id; //id is returned as an objects from addFacster
   return db.query(`SELECT * FROM facsters WHERE facsters.id = $1`, facsterId);
 };
 
 const addFacster = facster => {
+  // This makes a database query, that returns an id, however, it returns an array of one, so then it is converted to just the id (as an object)
   const { firstname, cohort, surname } = facster;
   return db.query(
     `INSERT INTO facsters(firstname, surname, cohort) VALUES($1,$2, $3) RETURNING ID`,
     [firstname, surname, cohort]
-  );
+  ).then(idArray => idArray[0]);
 };
 
 const getFacsterHobby = name => {
