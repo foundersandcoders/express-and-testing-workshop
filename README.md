@@ -36,21 +36,19 @@ app.use('/api/v1/', routes)
 * The objective of this workshop is to write integration tests for a backend
   server which has already been setup.
 
-* The test you will right will ensure that rather than only on function working
-  properly several interconnected functions all work to provide the desired
-  functionality for the end user.
+* 'Integration tests' are tests that check the correct functioning of several interconnected functions all working together.
 
 * In the server folder there is a `routes` subfolder inside of which all the
   servers routes have been written for you (using promises).
 
-* Your test will ensure that not only these functions but also the database
+* Your tests will ensure that not only these functions but also the database
   queries they depend on all work together to provide the information from each
   endpoint
 
 
 ## Requirements
 
-* [Postman](https://www.getpostman.com/) is a tool which allows you test
+* [Postman](https://www.getpostman.com/) is a tool which allows you to test
   api endpoints to see what these return.
 * An alternative is that you can use `curl` a command line took to ping an
   endpoint for example 
@@ -79,9 +77,9 @@ app.use('/api/v1/', routes)
 * Then go to you test folder, and open `routes.test.js`
 * Inside this file you will be using `tape` and `supertest`(a testing
   framework - [link to the docs!!](https://github.com/visionmedia/supertest))
-* Whilst tape allows you to make assertions and check that things are equal
+* Tape allows you to make assertions and check that things are equal
   etc. `supertest` will allow you to make requests to your server and expect
-  certain results.
+  certain results, and also has some limited assertion/testing functionality.
 * Although `supertest` is new to you there is a whole wide world of
   frameworks and libraries in javascript (#JSFatigue) and learning to use the docs
   is probably half of what it means to be a good js developer.
