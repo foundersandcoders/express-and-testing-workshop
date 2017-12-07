@@ -89,7 +89,7 @@ app.use('/api/v1/', routes)
   const test = require('tape')
 
   test('What your tests is testing', (t) => {
-      supertest(app)
+      request(app)
         .get('/facsters')
         .expect(200)
         .end(function(err, res) {
