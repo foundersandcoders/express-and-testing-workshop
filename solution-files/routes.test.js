@@ -1,3 +1,7 @@
+const tape = require('tape');
+const supertest = require('supertest');
+
+//Fill this with many many tests YAY!! 😜😩
 const test = require('tape');
 
 const request = require('supertest');
@@ -9,7 +13,6 @@ test('All routes should return the expected results', t => {
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
-      t.same(res.statusCode, 200, 'Status code is 200');
       t.error(err, 'No error');
       t.end();
     });
@@ -20,7 +23,6 @@ test('First User Should be Abdullah', t => {
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
-      t.same(res.statusCode, 200, 'Status code is 200');
       t.error(err, 'No error');
       t.same(res.body[0].firstname, 'Abdullah');
       t.end();
@@ -34,7 +36,6 @@ test('Should be able to get a facster by their name', t => {
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
-        t.same(res.statusCode, 200, 'Status code is 200');
         t.error(err, 'No error');
         t.same(res.body[0].firstname, name, `Name is ${name} as expected`);
         if (names.length - 1 === index) {
@@ -51,7 +52,6 @@ test('Should add a new facster', t => {
     .expect(201)
     .expect('Content-Type', /json/)
     .end((err, res) => {
-      t.same(res.statusCode, 201, 'Status code is 201');
       t.error(err, 'No error');
       t.same(res.body[0].firstname, 'jason', 'Should add JSON bourne to FAC');
       t.end();
@@ -63,7 +63,6 @@ test('Should find a facsters\' hobbies', t => {
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
-      t.same(res.statusCode, 200, 'Status code is 200');
       t.error(err, 'No error');
       t.same(
         res.body[0].hobby,
@@ -79,7 +78,6 @@ test('That it returns a given facster\'s superpower', t => {
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
-      t.same(res.statusCode, 200, 'Status code is 200');
       t.error(err, 'No error');
       t.same(
         res.body[0].superpower,
