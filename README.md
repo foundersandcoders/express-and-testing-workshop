@@ -84,7 +84,7 @@ app.use('/api/v1/', routes)
   frameworks and libraries in javascript (#JSFatigue) and learning to use the docs
   is probably half of what it means to be a good js developer.
 
-* The structure of your tests should be
+* The structure of your tests should be as below. Note that ```supertest``` is assigned to ```request``` as this is a convention.
   ```js
   const test = require('tape')
 
@@ -99,6 +99,10 @@ app.use('/api/v1/', routes)
       })
   ```
 
+* What should you test?
+  - Think about what response you would want from the API and see if you can test that.
+  - For example, you might test the status code (as above), the content type, and the contents of the body.
+  - Make sure you write tests for each route, and test each response thoroughly.
 * You will note that I have snuck promises into this workshop as they are an
   extremely common and important tool for handling asynchronicity and are
   well on their way to replacing callbacks.
