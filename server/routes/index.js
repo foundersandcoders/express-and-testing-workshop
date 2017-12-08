@@ -9,12 +9,6 @@ const queries = require('./queries');
 // =========================================================
 // Routes
 // =========================================================
-router.get('/facsters', (req, res, next) =>
-  queries
-    .getAll()
-    .then(users => res.status(200).json(users))
-    .catch(err => next(err))
-);
 
 router.get('/facsters', (req, res, next) =>
   queries
