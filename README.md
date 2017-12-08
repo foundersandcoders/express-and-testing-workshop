@@ -36,21 +36,19 @@ app.use('/api/v1/', routes)
 * The objective of this workshop is to write integration tests for a backend
   server which has already been setup.
 
-* The test you will right will ensure that rather than only on function working
-  properly several interconnected functions all work to provide the desired
-  functionality for the end user.
+* 'Integration tests' are tests that check the correct functioning of several interconnected functions all working together.
 
 * In the server folder there is a `routes` subfolder inside of which all the
   servers routes have been written for you (using promises).
 
-* Your test will ensure that not only these functions but also the database
+* Your tests will ensure that not only these functions but also the database
   queries they depend on all work together to provide the information from each
   endpoint
 
 
 ## Requirements
 
-* [Postman](https://www.getpostman.com/) is a tool which allows you test
+* [Postman](https://www.getpostman.com/) is a tool which allows you to test
   api endpoints to see what these return.
 * An alternative is that you can use `curl` a command line took to ping an
   endpoint for example 
@@ -71,27 +69,21 @@ app.use('/api/v1/', routes)
 * `git clone` this repository, run `npm install`.
 *  Run `createdb fac-express` - **IMPORTANT**
 *  Setup the database by running `npm run build:db` - **IMPORTANT**
-* This repository provides you with a skeleton express server your task is to
-  create tests for your express routes.
-* Your first task should be filling in the missing middleware that your server needs. See the comments in `server.js` for hints.
-* Once this is complete run `npm start` to begin the project.
+* Fill in the missing middleware that your server needs. See the comments in `server.js` for hints.
+* Once this is complete run `npm start`. Now you can use postman or another tool to make requests to the endpoints.
 * In **another** terminal pane run npm test.
 * Then go to you test folder, and open `routes.test.js`
 * Inside this file you will be using `tape` and `supertest`(a testing
   framework - [link to the docs!!](https://github.com/visionmedia/supertest))
-* Whilst tape allows you to make assertions and check that things are equal
+* Tape allows you to make assertions and check that things are equal
   etc. `supertest` will allow you to make requests to your server and expect
-  certain results.
-* Although `supertest` is new to you there is a whole wide world of
-  frameworks and libraries in javascript (#JSFatigue) and learning to use the docs
-  is probably half of what it means to be a good js developer.
-
-* The structure of your tests should be
+  certain results, and also has some limited assertion/testing functionality.
+* The structure of your tests should be as below. Note that ```supertest``` is assigned to ```request``` as this is a convention.
   ```js
   const test = require('tape')
 
   test('What your tests is testing', (t) => {
-      supertest(app)
+      request(app)
         .get('/facsters')
         .expect(200)
         .end(function(err, res) {
@@ -101,6 +93,14 @@ app.use('/api/v1/', routes)
       })
   ```
 
+## Notes / Tips
+* What should you test?
+  - Think about what response you would want from the API and see if you can test that.
+  - For example, you might test the status code (as above), the content type, and the contents of the body.
+  - Make sure you write tests for each route, and test each response thoroughly.
+*  Although `supertest` is new to you there is a whole wide world of
+  frameworks and libraries in javascript (#JSFatigue) and learning to use the docs
+  is probably half of what it means to be a good js developer.
 * You will note that I have snuck promises into this workshop as they are an
   extremely common and important tool for handling asynchronicity and are
   well on their way to replacing callbacks.
