@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./server/",
-    "test": "node ./server/tests/routes.test.js | tap-spec",
-    "test:watch": "tape -w",
+    "test": "node ./server/tests/routes.test.js | tap-spec",    
     "build:db": "node ./database/dbBuild.js"
   },
   "repository": {
