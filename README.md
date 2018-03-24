@@ -38,6 +38,8 @@ app.use('/api/v1/', routes)
 
 * 'Integration tests' are tests that check the correct functioning of several interconnected functions all working together.
 
+* `Supertest` and `Tape` allow us to perform Integration tests checking that the Server and Database are communicating properly, and calls to the Server endpoints respond with the correct status codes and any data requested.  
+
 * In the server folder there is a `routes` subfolder inside of which all the
   servers routes have been written for you (using promises).
 
@@ -51,10 +53,10 @@ app.use('/api/v1/', routes)
 * [Postman](https://www.getpostman.com/) is a tool which allows you to test
   api endpoints to see what these return.
 * An alternative is that you can use `curl` a command line took to ping an
-  endpoint for example 
+  endpoint for example
   ```sh
    curl http://www.example.org:1234/
-  ``` 
+  ```
   to check each endpoint (though
   this is slighty more involved and I recommend downloading postman).
 
