@@ -73,6 +73,7 @@ app.use('/api/v1/', routes)
   * Run `createdb fac-express`
   * Run `psql` or `pgcli` to enter the pg interactive terminal.
   * Enter `CREATE USER super WITH SUPERUSER PASSWORD 'password';`
+  * Enter `\q` in `psql` or `pgcli` to leave the pg interactive terminal.
   * Run `npm run build:db`
 * Fill in the missing middleware that your server needs. See the comments in `server.js` for hints.
 * Once this is complete run `npm start`. Now you can use postman or another tool to make requests to the endpoints.
