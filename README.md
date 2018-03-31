@@ -69,8 +69,12 @@ app.use('/api/v1/', routes)
 
 ## Tasks
 * `git clone` this repository, run `npm install`.
-*  Run `createdb fac-express` - **IMPORTANT**
-*  Setup the database by running `npm run build:db` - **IMPORTANT**
+* Set up the database:
+  * Run `createdb fac-express`
+  * Run `psql` or `pgcli` to enter the pg interactive terminal.
+  * Enter `CREATE USER super WITH SUPERUSER PASSWORD 'password';`
+  * Enter `\q` in `psql` or `pgcli` to leave the pg interactive terminal.
+  * Run `npm run build:db`
 * Fill in the missing middleware that your server needs. See the comments in `server.js` for hints.
 * Once this is complete run `npm start`. Now you can use postman or another tool to make requests to the endpoints.
 * In **another** terminal pane run npm test.

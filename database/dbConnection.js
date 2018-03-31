@@ -12,6 +12,8 @@ const localDB = {
   host: 'localhost',
   port: 5432,
   database: 'fac-express',
+  user: 'super',
+  password: 'password'
 };
 
 const connection = process.env.NODE_ENV === 'production' ? herokuDB : localDB;
