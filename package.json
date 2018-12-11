@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon ./server/",
-    "test": "node ./server/tests/routes.test.js | tap-spec",    
+    "test": "node ./server/tests/routes.test.js | tap-spec",
     "build:db": "node ./database/dbBuild.js"
   },
   "repository": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Akin909/express-and-testing-workshop#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.15.3",
     "nodemon": "^1.11.0",
     "pg-promise": "^6.3.6",
