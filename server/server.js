@@ -1,12 +1,13 @@
 //This is all hopefully familiar by now
 const express = require('express');
-const path = require('path');
+const bodyParser = require('body-parser');
 const routes = require('./routes');
 
 const app = express();
 
-//TODO We need middleware to convert request and response payloads to an from JSON
+// Parses the request payload (if JSON) before the request goes to the handler
+app.use(bodyParser.json());
 
-//TODO We need to setup a route/collection of routes
+app.use(routes);
 
 module.exports = app;
