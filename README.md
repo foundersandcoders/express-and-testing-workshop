@@ -23,22 +23,17 @@ router.get('/', (res, req) => {
 })
 // In Server.js
 const app = express()
-app.use('/api/v1/', routes)
-
-//final route will be
-/api/v1/
+app.use(routes)
 ```
 
-* In this workshop you will find a `server` and `database` folder. The database
-  configuration has been setup for you, so you should not have to change any code in
-  that folder but feel free to have a look.
+* In this workshop you will find a `server` and `database` folder, which have been set up for you, so you should not have to change any code in these folders but feel free to have a look.
 
 * The objective of this workshop is to write integration tests for a backend
   server which has already been setup.
 
 * 'Integration tests' are tests that check the correct functioning of several interconnected functions all working together.
 
-* `Supertest` and `Tape` allow us to perform Integration tests checking that the Server and Database are communicating properly, and calls to the Server endpoints respond with the correct status codes and any data requested.  
+* `Supertest` and `Tape` allow us to perform Integration tests checking that the Server and Database are communicating properly, and calls to the Server endpoints respond with the correct status codes and any data requested.
 
 * In the server folder there is a `routes` subfolder inside of which all the
   servers routes have been written for you (using promises).
@@ -75,8 +70,7 @@ app.use('/api/v1/', routes)
   * Enter `CREATE USER super WITH SUPERUSER PASSWORD 'password';`
   * Enter `\q` in `psql` or `pgcli` to leave the pg interactive terminal.
   * Run `npm run build:db`
-* Fill in the missing middleware that your server needs. See the comments in `server.js` for hints.
-* Once this is complete run `npm start`. Now you can use postman or another tool to make requests to the endpoints.
+* Run `npm start`. Now you can use postman or another tool to make requests to the endpoints.
 * In **another** terminal pane run npm test.
 * Then go to you test folder, and open `routes.test.js`
 * Inside this file you will be using `tape` and `supertest`(a testing
