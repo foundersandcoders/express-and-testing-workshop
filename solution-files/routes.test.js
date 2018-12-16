@@ -1,11 +1,11 @@
 //Fill this with many many tests YAY!! 😜😩
 const test = require('tape');
 const request = require('supertest');
-const app = require('./../server');
+const app = require('../server/server');
 
 test('All routes should return the expected results', t => {
   request(app)
-    .get('/v1/api/facsters/')
+    .get('/facsters/')
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
@@ -15,7 +15,7 @@ test('All routes should return the expected results', t => {
 });
 test('First User Should be Abdullah', t => {
   request(app)
-    .get('/v1/api/facsters/')
+    .get('/facsters/')
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
@@ -28,7 +28,7 @@ test('Should be able to get a facster by their name', t => {
   const names = ['Aseel', 'Bart', 'Amelie', 'Abdullah'];
   names.forEach((name, index) => {
     request(app)
-      .get(`/v1/api/facsters/${name}`)
+      .get(`/facsters/${name}`)
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -43,7 +43,7 @@ test('Should be able to get a facster by their name', t => {
 test('Should add a new facster', t => {
   const facTwelver = { firstname: 'jason', surname: 'bourne', cohort: 12 };
   request(app)
-    .post(`/v1/api/facster/new`)
+    .post(`/facster/new`)
     .send(facTwelver)
     .expect(201)
     .expect('Content-Type', /json/)
@@ -55,7 +55,7 @@ test('Should add a new facster', t => {
 });
 test('Should find a facsters\' hobbies', t => {
   request(app)
-    .get(`/v1/api/facsters/bart/hobby`)
+    .get(`/facsters/bart/hobby`)
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
@@ -70,7 +70,7 @@ test('Should find a facsters\' hobbies', t => {
 });
 test('That it returns a given facster\'s superpower', t => {
   request(app)
-    .get(`/v1/api/facsters/abdullah/superpower`)
+    .get(`/facsters/abdullah/superpower`)
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
